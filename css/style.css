@@ -1358,11 +1358,18 @@ form.contact-form {
     padding: 20px 28px 28px;
     border-bottom: 1px solid var(--border);
     box-shadow: var(--shadow-md);
-    transform: translateY(-110%);
-    transition: transform .35s ease;
+    /* On remonte le panneau de sa propre hauteur + la nav + une marge,
+       pour qu'aucune portion ne reste visible (peu importe le nombre d'items) */
+    transform: translateY(calc(-100% - var(--nav-h) - 40px));
+    visibility: hidden;
+    transition: transform .35s ease, visibility 0s linear .35s;
     z-index: 99;
   }
-  .nav-links.open { transform: translateY(0); }
+  .nav-links.open {
+    transform: translateY(0);
+    visibility: visible;
+    transition: transform .35s ease, visibility 0s linear 0s;
+  }
   .nav-links li { border-bottom: 1px solid var(--border); }
   .nav-links li:last-child { border-bottom: 0; }
   .nav-links a {
