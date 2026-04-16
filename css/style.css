@@ -1202,6 +1202,181 @@ p  { margin: 0 0 1em; color: var(--text-muted); }
 }
 .contact-row .val { color: var(--text); font-weight: 500; }
 
+/* ---------- Carte Interlocuteur (Raphaël) ---------- */
+.contact-person {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  box-shadow: var(--shadow-sm);
+  display: grid;
+  grid-template-columns: 200px 1fr;
+  margin-bottom: 28px;
+  transition: box-shadow .3s ease, border-color .3s ease;
+}
+.contact-person:hover {
+  box-shadow: var(--shadow-md);
+  border-color: var(--mba-pastel);
+}
+.contact-person-photo {
+  background: #0D0D0D;
+  position: relative;
+  overflow: hidden;
+}
+.contact-person-photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 18%;
+  filter: saturate(.95) contrast(1.02);
+}
+.contact-person-body {
+  padding: 30px 32px 32px;
+  display: flex;
+  flex-direction: column;
+}
+.contact-person-role {
+  font-size: 0.68rem;
+  letter-spacing: 2.5px;
+  text-transform: uppercase;
+  color: var(--mba-gold);
+  font-weight: 600;
+  margin-bottom: 8px;
+}
+.contact-person h3 {
+  font-family: var(--f-serif);
+  font-size: 1.7rem;
+  margin: 0 0 4px;
+  color: var(--text);
+}
+.contact-person-title {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  margin: 0 0 16px;
+}
+.contact-person-quote {
+  font-size: 0.92rem;
+  font-style: italic;
+  color: var(--text-muted);
+  line-height: 1.6;
+  margin: 0 0 22px;
+  padding-left: 14px;
+  border-left: 2px solid var(--mba-pastel);
+}
+.contact-person-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-top: auto;
+}
+.contact-person-cta {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  padding: 12px 16px;
+  border-radius: 6px;
+  background: var(--bg-alt);
+  transition: background .2s ease, color .2s ease;
+}
+.contact-person-cta .lbl {
+  font-size: 0.62rem;
+  letter-spacing: 1.8px;
+  text-transform: uppercase;
+  color: var(--text-soft);
+  font-weight: 600;
+}
+.contact-person-cta .val {
+  font-family: var(--f-serif);
+  font-size: 1.2rem;
+  color: var(--text);
+}
+.contact-person-cta:hover { background: var(--mba-pastel-bg); }
+.contact-person-cta:hover .val { color: var(--mba-gold); }
+.contact-person-cta.secondary .val { font-size: 1rem; word-break: break-all; }
+
+/* ---------- Carte Bureau MBA ---------- */
+.contact-office {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: 30px 32px;
+  box-shadow: var(--shadow-sm);
+}
+.contact-office-head {
+  display: flex;
+  gap: 18px;
+  align-items: center;
+  padding-bottom: 22px;
+  margin-bottom: 6px;
+  border-bottom: 1px solid var(--border);
+}
+.contact-office-logo {
+  width: 56px; height: 56px;
+  object-fit: contain;
+  flex-shrink: 0;
+}
+.contact-office-eyebrow {
+  display: block;
+  font-size: 0.62rem;
+  letter-spacing: 2.5px;
+  text-transform: uppercase;
+  color: var(--mba-gold);
+  font-weight: 600;
+  margin-bottom: 4px;
+}
+.contact-office-head h3 {
+  font-family: var(--f-serif);
+  font-size: 1.15rem;
+  margin: 0;
+  color: var(--text);
+  font-weight: 500;
+}
+.contact-office-list {
+  list-style: none;
+  margin: 0; padding: 0;
+}
+.contact-office-list li {
+  display: grid;
+  grid-template-columns: 110px 1fr;
+  gap: 16px;
+  align-items: start;
+  padding: 14px 0;
+  border-bottom: 1px solid var(--border);
+}
+.contact-office-list li:last-child { border-bottom: 0; }
+.contact-office-list .lbl {
+  font-size: 0.66rem;
+  letter-spacing: 1.8px;
+  text-transform: uppercase;
+  color: var(--text-soft);
+  font-weight: 600;
+  padding-top: 2px;
+}
+.contact-office-list .val {
+  color: var(--text);
+  font-size: 0.92rem;
+  line-height: 1.5;
+}
+.contact-office-list a { color: var(--text); transition: color .2s ease; }
+.contact-office-list a:hover { color: var(--mba-gold); }
+.contact-office-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 18px;
+  padding: 10px 0;
+  font-size: 0.72rem;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  font-weight: 600;
+  color: var(--mba-gold);
+  border-bottom: 1px solid var(--mba-gold);
+  transition: gap .2s ease;
+}
+.contact-office-link svg { width: 14px; height: 14px; transition: transform .2s ease; }
+.contact-office-link:hover { gap: 12px; }
+.contact-office-link:hover svg { transform: translateX(3px); }
+
 form.contact-form {
   background: var(--surface);
   border: 1px solid var(--border);
@@ -1582,6 +1757,16 @@ form.contact-form {
   .promoter-stats { gap: 32px 40px; padding: 22px 0; }
   .promoter-logo { width: 76px; height: 76px; }
   .promoter-stats strong { font-size: 1.4rem; }
+
+  .contact-person { grid-template-columns: 1fr; }
+  .contact-person-photo { aspect-ratio: 16 / 11; }
+  .contact-person-photo img { object-position: center 22%; }
+  .contact-person-body { padding: 24px; }
+  .contact-person h3 { font-size: 1.4rem; }
+  .contact-office { padding: 24px; }
+  .contact-office-head { gap: 14px; }
+  .contact-office-logo { width: 48px; height: 48px; }
+  .contact-office-list li { grid-template-columns: 1fr; gap: 4px; padding: 12px 0; }
 
   .section-head { margin-bottom: 44px; }
 

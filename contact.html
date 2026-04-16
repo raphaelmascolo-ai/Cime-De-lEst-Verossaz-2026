@@ -10,7 +10,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="css/style.css?v=10">
+<link rel="stylesheet" href="css/style.css?v=11">
 </head>
 <body>
 
@@ -50,7 +50,7 @@
   <div class="container reveal">
     <span class="eyebrow center">Contact</span>
     <h1>Parlons de votre futur chez vous.</h1>
-    <p class="lead" style="margin:0 auto;">Notre équipe se tient à votre disposition pour répondre à vos questions, vous transmettre le dossier de vente ou organiser une visite privée.</p>
+    <p class="lead" style="margin:0 auto;">Une question, l'envie d'une visite, le besoin d'un conseil&nbsp;? Appelez-moi directement ou écrivez-nous — je m'occupe personnellement de votre demande.</p>
   </div>
 </section>
 
@@ -58,49 +58,61 @@
   <div class="container">
     <div class="contact-grid">
       <div class="reveal">
-        <div class="contact-info">
-          <h3>Nos coordonnées</h3>
 
-          <div class="contact-row">
-            <div class="icon">⌂</div>
-            <div>
-              <div class="lbl">Bureau de vente</div>
-              <div class="val">MBA Groupe SA<br>Route du Village 12<br>1891 Vérossaz</div>
+        <article class="contact-person">
+          <div class="contact-person-photo">
+            <img src="images/raphael.jpg" alt="Raphaël Mascolo">
+          </div>
+          <div class="contact-person-body">
+            <span class="contact-person-role">Votre interlocuteur</span>
+            <h3>Raphaël Mascolo</h3>
+            <p class="contact-person-title">Promotion Cime de l'Est · MBA Groupe SA</p>
+            <p class="contact-person-quote">«&nbsp;Je vous accompagne du premier échange à la remise des clés. N'hésitez pas à m'appeler directement, je suis disponible en semaine et le week-end sur rendez-vous.&nbsp;»</p>
+            <div class="contact-person-actions">
+              <a href="tel:+41798256491" class="contact-person-cta">
+                <span class="lbl">Ligne directe</span>
+                <span class="val">+41 79 825 64 91</span>
+              </a>
+              <a href="mailto:raphael@mbagroupe.ch" class="contact-person-cta secondary">
+                <span class="lbl">E-mail</span>
+                <span class="val">raphael@mbagroupe.ch</span>
+              </a>
             </div>
           </div>
+        </article>
 
-          <div class="contact-row">
-            <div class="icon">☏</div>
+        <article class="contact-office">
+          <div class="contact-office-head">
+            <img src="images/logo-mba.png" alt="MBA Groupe SA" class="contact-office-logo">
             <div>
-              <div class="lbl">Téléphone</div>
-              <div class="val"><a href="tel:+41244440000">+41 24 444 00 00</a></div>
+              <span class="contact-office-eyebrow">Bureau MBA Groupe SA</span>
+              <h3>Holding valaisanne · Martigny</h3>
             </div>
           </div>
+          <ul class="contact-office-list">
+            <li>
+              <span class="lbl">Adresse</span>
+              <span class="val">Rue du Châble-Bet 41<br>1920 Martigny</span>
+            </li>
+            <li>
+              <span class="lbl">Standard</span>
+              <span class="val"><a href="tel:+41277236708">+41 27 723 67 08</a></span>
+            </li>
+            <li>
+              <span class="lbl">E-mail</span>
+              <span class="val"><a href="mailto:info@mbagroupe.ch">info@mbagroupe.ch</a></span>
+            </li>
+            <li>
+              <span class="lbl">Horaires</span>
+              <span class="val">Lun – Ven · 8h30 – 12h / 13h30 – 17h30<br>Samedi sur rendez-vous</span>
+            </li>
+          </ul>
+          <a href="https://www.mbagroupe.ch" target="_blank" rel="noopener" class="contact-office-link">
+            mbagroupe.ch
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+          </a>
+        </article>
 
-          <div class="contact-row">
-            <div class="icon">@</div>
-            <div>
-              <div class="lbl">E-mail</div>
-              <div class="val"><a href="mailto:info@mba-groupe.ch">info@mba-groupe.ch</a></div>
-            </div>
-          </div>
-
-          <div class="contact-row">
-            <div class="icon">◷</div>
-            <div>
-              <div class="lbl">Horaires</div>
-              <div class="val">Lundi – Vendredi · 8h30 – 12h / 13h30 – 17h30<br>Samedi sur rendez-vous</div>
-            </div>
-          </div>
-        </div>
-
-        <div style="margin-top:28px;" class="map-wrap">
-          <iframe
-            loading="lazy"
-            referrerpolicy="no-referrer-when-downgrade"
-            src="https://www.google.com/maps?q=V%C3%A9rossaz,+Switzerland&hl=fr&z=13&output=embed"
-            title="Carte Vérossaz"></iframe>
-        </div>
       </div>
 
       <form class="contact-form reveal" novalidate>
@@ -168,6 +180,18 @@
   </div>
 </section>
 
+<section class="section-tight" style="padding-top:0;">
+  <div class="container">
+    <div class="map-wrap reveal">
+      <iframe
+        loading="lazy"
+        referrerpolicy="no-referrer-when-downgrade"
+        src="https://www.google.com/maps?q=Rue+du+Ch%C3%A2ble-Bet+41,+1920+Martigny&hl=fr&z=15&output=embed"
+        title="Bureau MBA Groupe SA — Rue du Châble-Bet 41, Martigny"></iframe>
+    </div>
+  </div>
+</section>
+
 <footer class="footer">
   <div class="container">
     <div class="footer-grid">
@@ -193,10 +217,11 @@
         <h4>Contact</h4>
         <ul>
           <li>MBA Groupe SA</li>
-          <li>Route du Village 12</li>
-          <li>1891 Vérossaz</li>
-          <li><a href="tel:+41244440000">+41 24 444 00 00</a></li>
-          <li><a href="mailto:info@mba-groupe.ch">info@mba-groupe.ch</a></li>
+          <li>Rue du Châble-Bet 41</li>
+          <li>1920 Martigny</li>
+          <li><a href="tel:+41277236708">+41 27 723 67 08</a></li>
+          <li><a href="tel:+41798256491">+41 79 825 64 91</a></li>
+          <li><a href="mailto:info@mbagroupe.ch">info@mbagroupe.ch</a></li>
         </ul>
       </div>
       <div>
