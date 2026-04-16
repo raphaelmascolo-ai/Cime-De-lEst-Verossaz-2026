@@ -1,0 +1,176 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Galerie · Cime de l'Est — Vérossaz</title>
+<meta name="description" content="Galerie photographique de la promotion Cime de l'Est à Vérossaz : vues extérieures, intérieurs, paysages.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<header class="nav">
+  <div class="container">
+    <a href="index.html" class="brand">
+      <span class="brand-mark"><img src="images/logo-mba.png" alt="MBA Groupe SA"></span>
+      <span class="brand-text">
+        <strong>Cime de l'Est</strong>
+        <small>Vérossaz · Valais</small>
+      </span>
+    </a>
+    <nav>
+      <ul class="nav-links">
+        <li><a href="index.html">Accueil</a></li>
+        <li class="has-submenu">
+          <a href="projet.html" class="active">Projet <span class="caret">▾</span></a>
+          <ul class="submenu">
+            <li><a href="projet.html">Le projet</a></li>
+            <li><a href="galerie.html" class="active">Galerie</a></li>
+          </ul>
+        </li>
+        <li><a href="situation.html">Situation</a></li>
+        <li><a href="appartements.html">Appartements</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+    <a href="contact.html" class="nav-cta">
+      Réserver une visite
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+    </a>
+    <button class="burger" aria-label="Menu"><span></span><span></span><span></span></button>
+  </div>
+</header>
+
+<section class="hero hero-inner">
+  <div class="container reveal">
+    <span class="eyebrow center">Galerie</span>
+    <h1>Un regard sur Cime de l'Est.</h1>
+    <p class="lead" style="margin:0 auto;">Vues du projet, inspirations d'aménagement et paysages de Vérossaz. Des images choisies pour donner à voir l'esprit du lieu.</p>
+  </div>
+</section>
+
+<section class="section-tight">
+  <div class="container">
+    <div class="gallery-filters reveal">
+      <button data-filter="all" class="active">Tout</button>
+      <button data-filter="ext">Extérieurs</button>
+      <button data-filter="int">Intérieurs</button>
+      <button data-filter="paysage">Paysages</button>
+      <button data-filter="detail">Détails</button>
+    </div>
+
+    <div class="gallery-grid reveal">
+      <div class="gallery-item wide" data-cat="ext">
+        <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1600&q=80" alt="Vue architecture extérieure">
+        <div class="cap">Façade sud · bardage mélèze</div>
+      </div>
+      <div class="gallery-item tall" data-cat="paysage">
+        <img src="https://images.unsplash.com/photo-1519681393784-d120267933ba?auto=format&fit=crop&w=1200&q=80" alt="Vue Dents du Midi">
+        <div class="cap">Face aux Dents du Midi</div>
+      </div>
+      <div class="gallery-item" data-cat="int">
+        <img src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=1200&q=80" alt="Intérieur séjour">
+        <div class="cap">Séjour · parquet chêne massif</div>
+      </div>
+      <div class="gallery-item" data-cat="int">
+        <img src="https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?auto=format&fit=crop&w=1200&q=80" alt="Cuisine sur mesure">
+        <div class="cap">Cuisine sur mesure</div>
+      </div>
+      <div class="gallery-item" data-cat="detail">
+        <img src="https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?auto=format&fit=crop&w=1200&q=80" alt="Détail matière laiton">
+        <div class="cap">Laiton patiné · finitions</div>
+      </div>
+      <div class="gallery-item wide" data-cat="paysage">
+        <img src="https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&w=1600&q=80" alt="Paysage de montagne en Valais">
+        <div class="cap">Vallée du Rhône depuis Vérossaz</div>
+      </div>
+      <div class="gallery-item" data-cat="ext">
+        <img src="https://images.unsplash.com/photo-1580587771525-78b9dba3b914?auto=format&fit=crop&w=1200&q=80" alt="Terrasse extérieure">
+        <div class="cap">Terrasse privative</div>
+      </div>
+      <div class="gallery-item" data-cat="int">
+        <img src="https://images.unsplash.com/photo-1616046229478-9901c5536a45?auto=format&fit=crop&w=1200&q=80" alt="Chambre parentale">
+        <div class="cap">Chambre parentale</div>
+      </div>
+      <div class="gallery-item tall" data-cat="int">
+        <img src="https://images.unsplash.com/photo-1552581234-26160f608093?auto=format&fit=crop&w=1200&q=80" alt="Salle de bain en pierre">
+        <div class="cap">Salle de bain · pierre naturelle</div>
+      </div>
+      <div class="gallery-item" data-cat="paysage">
+        <img src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?auto=format&fit=crop&w=1200&q=80" alt="Panorama alpin">
+        <div class="cap">Crêtes alpines au lever du jour</div>
+      </div>
+      <div class="gallery-item" data-cat="detail">
+        <img src="https://images.unsplash.com/photo-1586023492125-27b2c045efd7?auto=format&fit=crop&w=1200&q=80" alt="Détail architecture">
+        <div class="cap">Détail charpente contemporaine</div>
+      </div>
+      <div class="gallery-item" data-cat="ext">
+        <img src="https://images.unsplash.com/photo-1523217582562-09d0def993a6?auto=format&fit=crop&w=1200&q=80" alt="Chalet moderne">
+        <div class="cap">Entrée principale</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="cta-band">
+  <div class="container reveal">
+    <h2>Envie d'en voir plus ?</h2>
+    <p>Le dossier de vente contient les rendus 3D complets, les plans et une simulation immersive du projet.</p>
+    <a href="contact.html" class="btn btn-gold">Recevoir le dossier</a>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <div class="footer-brand">
+          <div class="footer-brand-mark"><img src="images/logo-mba-noir.png" alt="MBA"></div>
+          <div class="footer-brand-text">Cime de l'Est<small>Une promotion MBA Groupe SA</small></div>
+        </div>
+        <p style="color:#9e9e9e;">Promotion résidentielle au cœur de Vérossaz, imaginée par MBA Groupe SA.</p>
+      </div>
+      <div>
+        <h4>Navigation</h4>
+        <ul>
+          <li><a href="index.html">Accueil</a></li>
+          <li><a href="projet.html">Projet</a></li>
+          <li><a href="situation.html">Situation</a></li>
+          <li><a href="appartements.html">Appartements</a></li>
+          <li><a href="galerie.html">Galerie</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Contact</h4>
+        <ul>
+          <li>MBA Groupe SA</li>
+          <li>Route du Village 12</li>
+          <li>1891 Vérossaz</li>
+          <li><a href="tel:+41244440000">+41 24 444 00 00</a></li>
+          <li><a href="mailto:info@mba-groupe.ch">info@mba-groupe.ch</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Informations</h4>
+        <ul>
+          <li><a href="#">Dossier de vente (PDF)</a></li>
+          <li><a href="#">Plans d'architecte</a></li>
+          <li><a href="#">Mentions légales</a></li>
+          <li><a href="#">Politique de confidentialité</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div>© 2026 MBA Groupe SA — Tous droits réservés.</div>
+      <div>Promotion Cime de l'Est · Vérossaz (VS)</div>
+    </div>
+  </div>
+</footer>
+
+<script src="js/main.js"></script>
+</body>
+</html>
