@@ -1412,7 +1412,25 @@ form.contact-form {
     color: var(--text);
     background: transparent;
   }
-  .nav-links .submenu a.active { background: transparent; color: var(--mba-gold); }
+  /* Sur mobile Galerie doit se comporter comme les autres items : pas de fond pastel, soulignement or */
+  .nav-links .submenu a,
+  .nav-links .submenu a:hover,
+  .nav-links .submenu a.active {
+    background: transparent !important;
+  }
+  .nav-links .submenu a::after {
+    content: "";
+    display: block;
+    position: absolute;
+    left: 0; right: 0; bottom: -2px;
+    height: 1px;
+    background: var(--mba-gold);
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform .3s ease;
+  }
+  .nav-links .submenu a:hover::after,
+  .nav-links .submenu a.active::after { transform: scaleX(1); }
 
   .hero-home .container {
     grid-template-columns: 1fr;
