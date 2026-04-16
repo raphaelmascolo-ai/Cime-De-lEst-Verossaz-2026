@@ -364,7 +364,7 @@ p  { margin: 0 0 1em; color: var(--text-muted); }
   background:
     radial-gradient(ellipse at 10% 10%, rgba(242, 221, 131, 0.35), transparent 55%),
     radial-gradient(ellipse at 90% 90%, rgba(182, 139, 60, 0.12), transparent 50%),
-    linear-gradient(180deg, #FFFFFF 0%, #F4F1EA 100%);
+    linear-gradient(180deg, var(--bg) 0%, #F4F1EA 100%);
 }
 .hero-home .container {
   display: grid;
@@ -444,7 +444,7 @@ p  { margin: 0 0 1em; color: var(--text-muted); }
 .hero-inner {
   background:
     radial-gradient(ellipse at top right, rgba(242, 221, 131, 0.4), transparent 55%),
-    linear-gradient(180deg, #FFFFFF 0%, var(--bg) 100%);
+    var(--bg);
   text-align: center;
 }
 .hero-inner .container { max-width: 900px; }
@@ -1377,7 +1377,9 @@ form.contact-form {
   /* Plus de dropdown — "Projet" et "Galerie" sont deux items plats comme les autres */
   .nav-links .has-submenu { border-bottom: 0; }
   .nav-links .has-submenu > a .caret { display: none; }
-  .nav-links .submenu {
+  .nav-links .submenu,
+  .nav-links .has-submenu:hover > .submenu,
+  .nav-links .has-submenu:focus-within > .submenu {
     position: static;
     transform: none;
     opacity: 1;
