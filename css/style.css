@@ -369,9 +369,16 @@ p  { margin: 0 0 1em; color: var(--text-muted); }
 .hero-home .container {
   display: grid;
   grid-template-columns: 1.1fr 1fr;
-  gap: 80px;
+  grid-template-areas:
+    "text visual"
+    "meta meta";
+  column-gap: 80px;
+  row-gap: 50px;
   align-items: center;
 }
+.hero-home .hero-text { grid-area: text; }
+.hero-home .hero-visual { grid-area: visual; }
+.hero-home .hero-meta { grid-area: meta; }
 .hero-home h1 span {
   display: block;
   color: var(--mba-gold);
@@ -380,7 +387,6 @@ p  { margin: 0 0 1em; color: var(--text-muted); }
 .hero-home .lead { margin-bottom: 36px; }
 .hero-cta-row { display: flex; flex-wrap: wrap; gap: 16px; }
 .hero-meta {
-  margin-top: 50px;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 30px;
@@ -1441,9 +1447,13 @@ form.contact-form {
 
   .hero-home .container {
     grid-template-columns: 1fr;
-    gap: 56px;
+    grid-template-areas:
+      "text"
+      "visual"
+      "meta";
+    gap: 40px;
   }
-  .hero-visual { aspect-ratio: 16 / 11; max-width: 560px; }
+  .hero-visual { aspect-ratio: 16 / 11; max-width: 560px; margin: 0 auto; width: 100%; }
   .hero-meta { grid-template-columns: repeat(3, 1fr); }
 
   .split { grid-template-columns: 1fr; gap: 40px; }
