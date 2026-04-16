@@ -1371,15 +1371,20 @@ form.contact-form {
    Responsive — mobile
    ========================================================= */
 @media (max-width: 720px) {
-  :root { --nav-h: 72px; }
+  :root { --nav-h: calc(72px + env(safe-area-inset-top, 0px)); }
   body { font-size: 15px; }
   .container { padding: 0 20px; }
   .section { padding: 64px 0; }
+
+  /* On pousse le contenu de la nav sous la safe-area (notch / barre d'état iOS) */
+  .nav { padding-top: env(safe-area-inset-top, 0px); }
 
   .brand-mark { width: 46px; height: 46px; }
   .brand-text strong { font-size: 1.05rem; }
   .brand-text small { font-size: 0.55rem; letter-spacing: 2.2px; }
 
+  /* Mobile : on aplatit le menu déroulant (Projet + Galerie deviennent des items plats) */
+  .nav-links .has-submenu > a .caret { display: none; }
   .nav-links .submenu {
     position: static;
     transform: none;
@@ -1388,14 +1393,27 @@ form.contact-form {
     pointer-events: auto;
     box-shadow: none;
     border: 0;
-    background: var(--bg-alt);
-    padding: 4px 0 4px 14px;
+    background: transparent;
+    padding: 0;
+    margin: 0;
     border-radius: 0;
-    margin: 0 0 4px;
+    list-style: none;
+    display: flex;
+    flex-direction: column;
     transition: none;
   }
-  .nav-links .submenu a { padding: 12px 0; font-size: 0.85rem; }
-  .nav-links .has-submenu > a .caret { display: none; }
+  /* "Le projet" du sous-menu est redondant avec le lien parent : on le cache */
+  .nav-links .submenu > li:first-child { display: none; }
+  /* Trait de séparation au-dessus de "Galerie" pour qu'il ait l'apparence d'un item frère */
+  .nav-links .submenu > li { border-top: 1px solid var(--border); }
+  .nav-links .submenu a {
+    padding: 18px 0;
+    font-size: 0.95rem;
+    letter-spacing: 1.2px;
+    color: var(--text);
+    background: transparent;
+  }
+  .nav-links .submenu a.active { background: transparent; color: var(--mba-gold); }
 
   .nav-links {
     position: fixed;
