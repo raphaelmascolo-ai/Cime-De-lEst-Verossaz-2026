@@ -1207,10 +1207,12 @@ p  { margin: 0 0 1em; color: var(--text-muted); }
   background: var(--surface);
   border: 1px solid var(--border);
   border-radius: var(--radius-lg);
-  overflow: hidden;
   box-shadow: var(--shadow-sm);
+  padding: 32px;
   display: grid;
-  grid-template-columns: 200px 1fr;
+  grid-template-columns: 180px 1fr;
+  gap: 32px;
+  align-items: center;
   margin-bottom: 28px;
   transition: box-shadow .3s ease, border-color .3s ease;
 }
@@ -1219,21 +1221,34 @@ p  { margin: 0 0 1em; color: var(--text-muted); }
   border-color: var(--mba-pastel);
 }
 .contact-person-photo {
+  width: 180px;
+  height: 180px;
+  border-radius: var(--radius-lg);
   background: #0D0D0D;
-  position: relative;
   overflow: hidden;
+  position: relative;
+  align-self: start;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.15);
+}
+.contact-person-photo::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  border: 1px solid rgba(255,255,255,0.08);
+  pointer-events: none;
 }
 .contact-person-photo img {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  object-position: center 18%;
+  object-position: center 12%;
   filter: saturate(.95) contrast(1.02);
 }
 .contact-person-body {
-  padding: 30px 32px 32px;
   display: flex;
   flex-direction: column;
+  min-width: 0;
 }
 .contact-person-role {
   font-size: 0.68rem;
@@ -1758,11 +1773,28 @@ form.contact-form {
   .promoter-logo { width: 76px; height: 76px; }
   .promoter-stats strong { font-size: 1.4rem; }
 
-  .contact-person { grid-template-columns: 1fr; }
-  .contact-person-photo { aspect-ratio: 16 / 11; }
-  .contact-person-photo img { object-position: center 22%; }
-  .contact-person-body { padding: 24px; }
-  .contact-person h3 { font-size: 1.4rem; }
+  .contact-person {
+    grid-template-columns: 1fr;
+    justify-items: center;
+    text-align: center;
+    padding: 28px 24px;
+    gap: 22px;
+  }
+  .contact-person-photo {
+    width: 140px;
+    height: 140px;
+    border-radius: 50%;
+  }
+  .contact-person-photo img { object-position: center 14%; }
+  .contact-person-body { align-items: center; }
+  .contact-person h3 { font-size: 1.45rem; }
+  .contact-person-quote {
+    border-left: 0;
+    border-top: 1px solid var(--mba-pastel);
+    padding: 14px 8px 0;
+    text-align: center;
+  }
+  .contact-person-actions { width: 100%; }
   .contact-office { padding: 24px; }
   .contact-office-head { gap: 14px; }
   .contact-office-logo { width: 48px; height: 48px; }
