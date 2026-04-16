@@ -1247,6 +1247,89 @@ form.contact-form {
 }
 .checkbox input { width: auto; margin-top: 4px; }
 
+/* ---------- Signature promoteur (discrète) ---------- */
+.promoter-signature {
+  padding: 90px 0 100px;
+  background: var(--bg);
+  border-top: 1px solid var(--border);
+  text-align: center;
+}
+.promoter-signature .container { max-width: 720px; }
+.promoter-eyebrow {
+  display: block;
+  font-size: 0.7rem;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: var(--text-soft);
+  font-weight: 500;
+  margin-bottom: 24px;
+}
+.promoter-logo {
+  display: inline-block;
+  width: 96px;
+  height: 96px;
+  margin-bottom: 28px;
+  transition: transform .35s ease, opacity .25s ease;
+}
+.promoter-logo img { width: 100%; height: 100%; object-fit: contain; }
+.promoter-logo:hover { transform: translateY(-2px); }
+.promoter-signature p {
+  color: var(--text-muted);
+  font-size: 1rem;
+  line-height: 1.75;
+  margin: 0 0 36px;
+}
+.promoter-stats {
+  display: flex;
+  justify-content: center;
+  gap: 60px;
+  flex-wrap: wrap;
+  padding: 28px 0;
+  margin: 0 auto 36px;
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+  max-width: 600px;
+}
+.promoter-stats > div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+}
+.promoter-stats strong {
+  font-family: var(--f-serif);
+  font-size: 1.7rem;
+  font-weight: 500;
+  color: var(--mba-gold);
+  line-height: 1;
+}
+.promoter-stats span {
+  font-size: 0.68rem;
+  letter-spacing: 1.8px;
+  text-transform: uppercase;
+  color: var(--text-soft);
+}
+.promoter-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 0.78rem;
+  letter-spacing: 2.2px;
+  text-transform: uppercase;
+  font-weight: 600;
+  color: var(--text);
+  padding: 10px 0;
+  border-bottom: 1px solid var(--text);
+  transition: color .25s ease, border-color .25s ease, gap .25s ease;
+}
+.promoter-link svg { width: 16px; height: 16px; transition: transform .25s ease; }
+.promoter-link:hover {
+  color: var(--mba-gold);
+  border-color: var(--mba-gold);
+  gap: 14px;
+}
+.promoter-link:hover svg { transform: translateX(3px); }
+
 /* ---------- CTA band ---------- */
 .cta-band {
   padding: 80px 0;
@@ -1496,6 +1579,11 @@ form.contact-form {
   .hero { padding: calc(var(--nav-h) + 50px) 0 70px; }
   .hero-home { min-height: auto; padding-top: calc(var(--nav-h) + 40px); padding-bottom: 70px; }
   .hero-meta { grid-template-columns: 1fr; gap: 20px; text-align: left; }
+
+  .promoter-signature { padding: 60px 0 70px; }
+  .promoter-stats { gap: 32px 40px; padding: 22px 0; }
+  .promoter-logo { width: 76px; height: 76px; }
+  .promoter-stats strong { font-size: 1.4rem; }
 
   .section-head { margin-bottom: 44px; }
 
