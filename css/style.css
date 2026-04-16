@@ -45,7 +45,11 @@
 }
 
 * { box-sizing: border-box; }
-html { scroll-behavior: smooth; }
+html {
+  scroll-behavior: smooth;
+  background: var(--bg);
+  overscroll-behavior: none;
+}
 body {
   margin: 0;
   font-family: var(--f-sans);
@@ -53,6 +57,7 @@ body {
   line-height: 1.65;
   color: var(--text);
   background: var(--bg);
+  overscroll-behavior: none;
   -webkit-font-smoothing: antialiased;
   text-rendering: optimizeLegibility;
 }
