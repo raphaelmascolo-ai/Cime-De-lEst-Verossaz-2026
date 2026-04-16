@@ -1723,9 +1723,15 @@ form.contact-form {
       "visual"
       "meta";
     gap: 40px;
+    text-align: center;
   }
+  .hero-home .hero-text { align-items: center; }
+  .hero-home .lead { margin-left: auto; margin-right: auto; max-width: 540px; }
+  .hero-home .hero-cta-row { justify-content: center; }
+  .hero-home .eyebrow { padding-left: 0; }
+  .hero-home .eyebrow::before { display: none; }
   .hero-visual { aspect-ratio: 16 / 11; max-width: 560px; margin: 0 auto; width: 100%; }
-  .hero-meta { grid-template-columns: repeat(3, 1fr); }
+  .hero-meta { grid-template-columns: repeat(3, 1fr); text-align: center; }
 
   .split { grid-template-columns: 1fr; gap: 40px; }
   .split.reverse { direction: ltr; }
@@ -1766,7 +1772,7 @@ form.contact-form {
 
   .hero { padding: calc(var(--nav-h) + 50px) 0 70px; }
   .hero-home { min-height: auto; padding-top: calc(var(--nav-h) + 40px); padding-bottom: 70px; }
-  .hero-meta { grid-template-columns: 1fr; gap: 20px; text-align: left; }
+  .hero-meta { grid-template-columns: 1fr; gap: 20px; text-align: center; }
 
   .promoter-signature { padding: 60px 0 70px; }
   .promoter-stats { gap: 32px 40px; padding: 22px 0; }
@@ -1795,6 +1801,24 @@ form.contact-form {
     text-align: center;
   }
   .contact-person-actions { width: 100%; }
+
+  /* Carte bureau MBA — centrée comme la carte interlocuteur */
+  .contact-office { padding: 28px 24px; text-align: center; }
+  .contact-office-head {
+    flex-direction: column;
+    align-items: center;
+    gap: 14px;
+    text-align: center;
+  }
+  .contact-office-head h3 { text-align: center; }
+  .contact-office-list li {
+    grid-template-columns: 1fr;
+    gap: 4px;
+    padding: 14px 0;
+    justify-items: center;
+  }
+  .contact-office-list .lbl { text-align: center; padding-top: 0; }
+  .contact-office-list .val { text-align: center; }
   .contact-office { padding: 24px; }
   .contact-office-head { gap: 14px; }
   .contact-office-logo { width: 48px; height: 48px; }
