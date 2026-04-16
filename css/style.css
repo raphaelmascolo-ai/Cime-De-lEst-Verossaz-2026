@@ -1336,7 +1336,14 @@ form.contact-form {
   .brand-text small { font-size: 0.58rem; letter-spacing: 2.4px; }
 
   /* Menu burger — iPad portrait / mobile */
-  .nav { padding-top: env(safe-area-inset-top, 0px); }
+  /* Nav fully opaque so the safe-area zone no longer shows the page through (plus de "barre blanche") */
+  .nav {
+    padding-top: env(safe-area-inset-top, 0px);
+    background: #FAFAF7;
+    backdrop-filter: none;
+    -webkit-backdrop-filter: none;
+  }
+  .nav.scrolled { background: #FFFFFF; }
   .nav-links {
     position: fixed;
     inset: var(--nav-h) 0 auto 0;
