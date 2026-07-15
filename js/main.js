@@ -10,6 +10,15 @@
     onScroll();
   }
 
+  // Accueil : la nav n'apparaît qu'une fois le hero plein écran passé
+  if (nav && nav.classList.contains('nav-hero')) {
+    const onScrollHero = () =>
+      nav.classList.toggle('nav-visible', window.scrollY > window.innerHeight * 0.7);
+    window.addEventListener('scroll', onScrollHero, { passive: true });
+    window.addEventListener('resize', onScrollHero, { passive: true });
+    onScrollHero();
+  }
+
   if (burger && links) {
     burger.addEventListener('click', () => {
       const open = links.classList.toggle('open');
