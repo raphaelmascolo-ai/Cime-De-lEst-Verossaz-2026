@@ -379,6 +379,23 @@ p  { margin: 0 0 1em; color: var(--text-muted); }
     url("../images/exterieurs/exterieur-01.jpg") center / cover no-repeat;
 }
 
+/* Logo MBA Groupe en haut au centre du hero */
+.hero-brand {
+  position: absolute;
+  top: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 5;
+  transition: opacity .3s ease;
+}
+.hero-brand:hover { opacity: 0.85; }
+.hero-brand img {
+  width: 200px;
+  height: auto;
+  display: block;
+  filter: drop-shadow(0 2px 16px rgba(0, 0, 0, 0.4));
+}
+
 /* Indicateur de défilement */
 .hero-scroll {
   position: absolute;
@@ -1771,6 +1788,8 @@ form.contact-form {
 
   .hero { padding: calc(var(--nav-h) + 50px) 0 70px; }
   .hero-home { padding: 0; }
+  .hero-brand { top: 14px; }
+  .hero-brand img { width: 150px; }
   .hero-scroll { bottom: 28px; }
   .hero-intro { padding: 70px 0 64px; }
   .hero-intro .hero-meta { margin-top: 48px; }
