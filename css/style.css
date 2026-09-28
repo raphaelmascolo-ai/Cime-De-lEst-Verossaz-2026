@@ -1095,6 +1095,7 @@ p  { margin: 0 0 1em; color: var(--text-muted); }
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   grid-auto-rows: 260px;
+  grid-auto-flow: dense;
   gap: 16px;
 }
 .gallery-item {
