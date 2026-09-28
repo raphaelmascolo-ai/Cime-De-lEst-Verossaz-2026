@@ -776,9 +776,9 @@ p  { margin: 0 0 1em; color: var(--text-muted); }
   overflow: hidden;
   background: #fff;
   border: 1px solid var(--border);
-  aspect-ratio: 4 / 3;
-  display: grid; place-items: center;
 }
+.apt-plan a { display: block; }
+.apt-plan img { width: 100%; height: auto; display: block; }
 .apt-plan svg { width: 100%; height: 100%; display: block; }
 .apt-plan-label {
   margin-top: 10px;
