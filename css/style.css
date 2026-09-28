@@ -1477,6 +1477,13 @@ form.contact-form {
 }
 .checkbox input { width: auto; margin-top: 4px; }
 
+/* Formulaire : piège à robots + message d'état */
+.contact-form .field.hp { position: absolute; left: -9999px; width: 1px; height: 1px; overflow: hidden; }
+.contact-form { position: relative; }
+.contact-form .form-note { margin: 14px 0 0; font-size: .92rem; min-height: 1.4em; }
+.contact-form .form-note.success { color: #2E6B3A; }
+.contact-form .form-note.error { color: #A33A2F; }
+
 /* ---------- Signature promoteur (discrète) ---------- */
 .promoter-signature {
   padding: 90px 0 100px;
