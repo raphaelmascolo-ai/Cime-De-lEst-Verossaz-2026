@@ -4,6 +4,9 @@
 //   RESEND_FROM_EMAIL  expéditeur, domaine vérifié chez Resend
 //   CONTACT_TO_EMAIL   destinataire (défaut : raphael@mbaimmobilier.ch)
 
+const buildEmail = require("./_lib/email.js");
+const assets = require("./_lib/assets.js");
+
 const TO_DEFAULT = "raphael@mbaimmobilier.ch";
 const FROM_DEFAULT = "Cime de l'Est <no-reply@mba-immobilier.ch>";
 // Domaine vérifié chez Resend à ce jour : mybat.ch. Utilisé en repli si le domaine
@@ -76,12 +79,15 @@ module.exports = async (req, res) => {
   ].join("\n");
 
   try {
+    const html = buildEmail({ nom, email, phone, subject, interest, message, date: new Date() });
     const payload = {
       from,
       to: [to],
       reply_to: email,
       subject: `Cime de l'Est · ${subject} · ${nom}`,
       text,
+      html,
+      attachments: [assets.logo, assets.hero],
     };
     let r = await send(apiKey, payload);
     if (r.status === 403 && from !== FROM_FALLBACK) {
