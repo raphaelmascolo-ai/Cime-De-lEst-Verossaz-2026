@@ -124,17 +124,39 @@
     document.addEventListener('keydown', (e) => { if (e.key === 'Escape' && visitModal.classList.contains('open')) close(); });
   }
 
-  // Submit contact (mock)
+  // Formulaire contact : ouvre la messagerie avec la demande pré-remplie
   const form = document.querySelector('form.contact-form');
   if (form) {
     form.addEventListener('submit', (e) => {
       e.preventDefault();
+      if (!form.checkValidity()) { form.reportValidity(); return; }
+      const v = (name) => (form.querySelector('[name="' + name + '"]') || {}).value || '';
+      const nom = (v('firstname') + ' ' + v('lastname')).trim();
+      const sujet = v('subject') || 'Demande d\'information';
+      const lignes = [
+        'Bonjour Raphaël,',
+        '',
+        'Demande : ' + sujet,
+        'Lot d\'intérêt : ' + (v('interest') || 'Aucune préférence'),
+        '',
+        'Nom : ' + nom,
+        'E-mail : ' + v('email'),
+        'Téléphone : ' + (v('phone') || '—'),
+        '',
+        'Message :',
+        v('message') || '—',
+        '',
+        'Envoyé depuis le site Cime de l\'Est · Vérossaz'
+      ];
+      const href = 'mailto:raphael@mbaimmobilier.ch'
+        + '?subject=' + encodeURIComponent('Cime de l\'Est · ' + sujet + ' · ' + nom)
+        + '&body=' + encodeURIComponent(lignes.join('\n'));
       const btn = form.querySelector('button[type="submit"]');
       const original = btn.textContent;
-      btn.textContent = 'Message envoyé ✓';
+      btn.textContent = 'Ouverture de votre messagerie…';
       btn.disabled = true;
-      form.reset();
-      setTimeout(() => { btn.textContent = original; btn.disabled = false; }, 3500);
+      window.location.href = href;
+      setTimeout(() => { btn.textContent = original; btn.disabled = false; }, 4000);
     });
   }
 })();
