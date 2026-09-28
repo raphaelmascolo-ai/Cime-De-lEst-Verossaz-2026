@@ -1484,6 +1484,17 @@ form.contact-form {
 .contact-form .form-note.success { color: #2E6B3A; }
 .contact-form .form-note.error { color: #A33A2F; }
 
+/* ---------- Pages légales ---------- */
+.legal { max-width: 820px; margin: 0 auto; }
+.legal h2 { font-size: clamp(1.35rem, 2.2vw, 1.75rem); margin: 44px 0 12px; }
+.legal h2:first-child { margin-top: 0; }
+.legal p, .legal li { font-size: 1rem; line-height: 1.75; color: var(--text-muted); }
+.legal p strong { color: var(--text); font-weight: 600; }
+.legal a { color: var(--text); text-decoration: underline; text-underline-offset: 3px; }
+.legal ul { padding-left: 22px; margin: 0 0 1em; }
+.legal li { margin-bottom: 8px; }
+.legal .legal-date { margin-top: 48px; font-size: .85rem; color: var(--text-soft); }
+
 /* ---------- Signature promoteur (discrète) ---------- */
 .promoter-signature {
   padding: 90px 0 100px;
