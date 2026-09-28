@@ -6,6 +6,17 @@
 
 const TO_DEFAULT = "raphael@mbaimmobilier.ch";
 const FROM_DEFAULT = "Cime de l'Est <no-reply@mba-immobilier.ch>";
+// Domaine vérifié chez Resend à ce jour : mybat.ch. Utilisé en repli si le domaine
+// de RESEND_FROM_EMAIL n'est pas (encore) vérifié.
+const FROM_FALLBACK = "Cime de l'Est <no-reply@mybat.ch>";
+
+async function send(apiKey, payload) {
+  return fetch("https://api.resend.com/emails", {
+    method: "POST",
+    headers: { Authorization: `Bearer ${apiKey}`, "Content-Type": "application/json" },
+    body: JSON.stringify(payload),
+  });
+}
 
 function clean(v, max = 500) {
   return String(v ?? "").replace(/[\r\n]+/g, " ").trim().slice(0, max);
@@ -65,17 +76,23 @@ module.exports = async (req, res) => {
   ].join("\n");
 
   try {
-    const r = await fetch("https://api.resend.com/emails", {
-      method: "POST",
-      headers: { Authorization: `Bearer ${apiKey}`, "Content-Type": "application/json" },
-      body: JSON.stringify({
-        from,
-        to: [to],
-        reply_to: email,
-        subject: `Cime de l'Est · ${subject} · ${nom}`,
-        text,
-      }),
-    });
+    const payload = {
+      from,
+      to: [to],
+      reply_to: email,
+      subject: `Cime de l'Est · ${subject} · ${nom}`,
+      text,
+    };
+    let r = await send(apiKey, payload);
+    if (r.status === 403 && from !== FROM_FALLBACK) {
+      const detail = await r.text();
+      if (/not verified/i.test(detail)) {
+        console.warn("[contact] domaine expéditeur non vérifié, repli sur", FROM_FALLBACK);
+        r = await send(apiKey, { ...payload, from: FROM_FALLBACK });
+      } else {
+        console.error("[contact] Resend 403", detail);
+      }
+    }
     if (!r.ok) {
       console.error("[contact] Resend", r.status, await r.text());
       res.status(502).json({ ok: false, error: "Envoi impossible pour le moment. Appelez-nous au +41 79 825 64 91." });
